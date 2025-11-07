@@ -15,14 +15,15 @@ public class WeatherService {
     @Value("${openweathermap.api.url}")
     private String apiUrl;
 
-    private final RestTemplate restTemplate;
+    private final RestTemplate restTemplate;  //simplifica la realización de solicitudes HTTP (como GET, POST, PUT, DELETE)
 
 
-    public WeatherService(RestTemplate restTemplate) {
+    public WeatherService(RestTemplate restTemplate) {  //hacer llamadas http
         this.restTemplate = restTemplate;
     }
 
-    @Return
+    @Param //para consultar nombre de la ciudad
+    @Return //objeto de weatherResponse
     public WeatherResponse getWeatherByCity(String cityName) {
         String fullUrl = UriComponentsBuilder.fromUriString(apiUrl)
                 .queryParam("q", cityName)
@@ -38,4 +39,6 @@ public class WeatherService {
             return null;
         }
     }
+
+    
 }
