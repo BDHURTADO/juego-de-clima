@@ -1,0 +1,15 @@
+package com.juego.backend.model;
+
+import lombok.Data;
+import java.util.List;
+import lombok.Builder;
+
+@Data
+@Builder
+
+//@Entity para que aparezca tabla monster en base de datos
+public class monster{
+    private String name;
+    private int cont;
+    private String imagePath;
+}
