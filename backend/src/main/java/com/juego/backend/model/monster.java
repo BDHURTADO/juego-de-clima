@@ -6,7 +6,6 @@ import lombok.Builder;
 
 @Data
 @Builder
-
 //@Entity para que aparezca tabla monster en base de datos
 public class monster{
     private String name;
